@@ -1,0 +1,19 @@
+{
+  "name": "kibrycker/json-rpc",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "maksimmartyskin",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "JsonRpc\\": "src/"
+    }
+  }
+}
