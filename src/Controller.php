@@ -81,7 +81,9 @@ abstract class Controller
         $methodParams = $reflection->getParameters();
         $requestParams = $this->requestParams;
         $onlyOneParam = $reflection->getNumberOfParameters() === 1;
-        if ($onlyOneParam) {
+        if ($methodParams[0]->isArray() && $onlyOneParam) {
+            $requestParams = [$methodParams[0]->getName() => $requestParams];
+        } elseif ($onlyOneParam) {
             $requestParams = [$methodParams[0]->getName() => $requestParams[$methodParams[0]->getName()]];
         }
 
